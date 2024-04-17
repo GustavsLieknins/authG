@@ -186,6 +186,12 @@
     {
         cursor: pointer;
     }
+
+    .expla
+    {
+        font-size: 0.8rem;
+        color: #666;
+    }
 </style>
 </head>
 <body>
