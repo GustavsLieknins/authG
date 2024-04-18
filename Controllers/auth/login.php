@@ -1,5 +1,8 @@
 <?php
 
+
+guest();
+
 require "Database.php";
 require "Validator.php";
 $config = require "config.php";
@@ -29,10 +32,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     {
         $_SESSION["user"] = true;
         $_SESSION["email"] = $_POST["email"];
-        echo $_SESSION["email"];
+        echo "User with the email " . $_SESSION["email"] . " has logged in.";
+
+        header("Location: /");
+        die();
     }
 
 }
 
 $page_title = "";
 require "views/auth/login.view.php";
+
+unset($_SESSION["flash"]);

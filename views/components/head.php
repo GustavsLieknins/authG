@@ -192,6 +192,24 @@
         font-size: 0.8rem;
         color: #666;
     }
+
+    .flash
+    {
+        visibility: hidden;
+        opacity: 0;
+        animation: disappear 3s;
+    }
+    @keyframes disappear
+    {
+        0% {opacity: 1;
+            visibility: visible;}
+        80% {opacity: 1;
+            visibility: visible;}
+        100% {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
 </style>
 </head>
 <body>

@@ -1,5 +1,8 @@
 <?php
 
+guest();
+
+
 require "Database.php";
 require "Validator.php";
 $config = require "config.php";
@@ -36,7 +39,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         $query = "INSERT INTO users (email, password) VALUES (:email, :password)";
         $params = [":email" => $_POST["email"], ":password" => password_hash($_POST["password"], PASSWORD_BCRYPT)];
         $db->execute($query, $params);
+
+        $_SESSION["flash"] = "You have been registered!";
+
         header("Location: /login");
+        die();
     }
 
 }
