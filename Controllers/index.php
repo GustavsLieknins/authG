@@ -5,4 +5,4 @@ $page_title = "";
 
 auth();
 
-require "views/index.view.php";
+require "../views/index.view.php";

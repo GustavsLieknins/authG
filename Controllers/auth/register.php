@@ -3,9 +3,9 @@
 guest();
 
 
-require "Database.php";
-require "Validator.php";
-$config = require "config.php";
+require "../Core/Database.php";
+require "../Core/Validator.php";
+$config = require "../config.php";
 $db = new DataBase($config);
 
 $errors = [];
@@ -49,4 +49,4 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 }
 
 $page_title = "";
-require "views/auth/register.view.php";
+require "../views/auth/register.view.php";
